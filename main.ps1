@@ -11,6 +11,6 @@ $usbDevice = Get-PnpDevice | Where-Object { $_.FriendlyName -like 'Haut-parleurs
 
 #Activation du casque si detecté
 if ($usbDevice) {
-    Write-Host "🎧 Casque USB détecté — bascule vers $($usbDevice.FriendlyName)" -ForegroundColor Green
-    Set-AudioDevice -ID "{0.0.0.00000000}.{e4717860-080c-4853-9200-1e77c0dd46ef}" 
+    Write-Host " Casque USB, bascule vers $($usbDevice.FriendlyName)" -ForegroundColor Green
+    Set-AudioDevice -ID '{0.0.0.00000000}.{e4717860-080c-4853-9200-1e77c0dd46ef}' 
 } 
