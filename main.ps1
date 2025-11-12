@@ -19,7 +19,6 @@ if ($usbDevice.Status -eq 'OK') {
 }
 
 
-
 #C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 
 #-File "C:\Users\chris\Documents\switch-audiocard\main.ps1"
