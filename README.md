@@ -1,5 +1,5 @@
 # switch-audiocard
 
-Pour lancer le script, la politique d'exécution des script doit être modifié sur la machine .
+Pour lancer le script, la politique d'exécution des scripts doit être modifiée sur la machine.
 
-set-ExecutionPolicy RemoteSigned 
+```set-ExecutionPolicy RemoteSigned``` 
