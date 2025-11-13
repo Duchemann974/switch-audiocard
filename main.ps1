@@ -14,10 +14,10 @@ $usbDevice = Get-PnpDevice | Where-Object { $_.FriendlyName -like 'Haut-parleurs
 #Activation du casque si detecté
 if ($usbDevice.Status -eq 'OK') {
     Write-Host " Casque USB, bascule vers $($usbDevice.FriendlyName)" -ForegroundColor Green
-    Write-Output " $(get-date) - Bascule vers le casque OK" >> $path_logs
+    Write-Output " $(get-date) - Bascule vers le casque OK" | Out-File -FilePath $path_logs -Append -Encoding utf8
     Set-AudioDevice -ID '{0.0.0.00000000}.{e4717860-080c-4853-9200-1e77c0dd46ef}' 
 } else {
-    Write-Output " $(get-date) - Bascule vers le casque non effectuée, casque non branché" >> $path_logs
+    Write-Output " $(get-date) - Bascule vers le casque non effectuée, casque non branché" | Out-File -FilePath $path_logs -Append -Encoding utf8
 }
 
 
