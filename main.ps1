@@ -1,4 +1,4 @@
-$path_logs = "C:\Users\chris\Documents\switch-audiocard\log.txt"
+$path_logs = "C:\Users\chris\Documents\switch-audiocard\log.log"
 
 # Vérification de la prescence du module "AudioDeviceCmdlets"
 $module = Get-Module AudioDeviceCmdlets 
