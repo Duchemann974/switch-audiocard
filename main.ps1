@@ -1,16 +1,15 @@
 $path_logs = "C:\Users\chris\Documents\switch-audiocard\log.txt"
 
 # Vérification de la prescence du module "AudioDeviceCmdlets"
-$module = Get-Module AudioDeviceCmdlets -Verbose
+$module = Get-Module AudioDeviceCmdlets 
 
 if (!($module)) {
-    Install-Module -Name AudioDeviceCmdlets -Scope CurrentUser -Verbose
-    Import-Module -Name AudioDeviceCmdlets -Verbose
+    Install-Module -Name AudioDeviceCmdlets -Scope CurrentUser 
+    Import-Module -Name AudioDeviceCmdlets 
 }
 
 #Vérifie si le périphérique USB est connecté
-$usbDevice = Get-PnpDevice | Where-Object { $_.FriendlyName -like 'Haut-parleurs (C-Media USB Audio Device   )' } -Verbose
-
+$usbDevice = Get-PnpDevice | Where-Object { $_.FriendlyName -like 'Haut-parleurs (C-Media USB Audio Device   )' } 
 #Activation du casque si detecté
 if ($usbDevice.Status -eq 'OK') {
     Write-Host " Casque USB, bascule vers $($usbDevice.FriendlyName)" -ForegroundColor Green
